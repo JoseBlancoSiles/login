@@ -1,5 +1,4 @@
-# RESUME
-Register and Login webapp using Flask/SQL for the backend and HTML/CSS for the frontend. I called this project REGILOG.
+# Register and Login webapp using Flask/SQL for the backend and HTML/CSS for the frontend. I called this project REGILOG.
 
 ![image](https://user-images.githubusercontent.com/107679686/202873412-c4de459a-02a7-4b53-85af-e43596c23f5b.png)
 
@@ -15,10 +14,8 @@ Login has 2 user-box, username and password. If username & password are found in
 in /users you can see all the registrants structed in a table.
 The database administrator can delete users from the BBDD by clicking "Deregister". An email is automatically sent to the user.
 
-# HOW TO USE
-Take in consideration that you will need to configure the mail like this:
-
 # Configuration to send mail after registration/deregistration
+Take in consideration that you will need to configure the mail like this:
 app.config["MAIL_DEFAULT_SENDER"] = myEnval.MAIL_DEFAULT_SENDER
 app.config["MAIL_PASSWORD"] = myEnval.MAIL_PASSWORD
 app.config["MAIL_PORT"] = 587
@@ -29,7 +26,7 @@ mail = Mail(app)
 
 I suggest to create a new folder inside your project called myEnval.py where you can safely storage your passwords and email.
 
-Tu run this webapp code this in your bash terminal:
+Tu run this webapp write this in your bash terminal:
 
 $ flask run
 
