@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+<head><title>USERS</title></head>
+<body>
+      <h1 class="header">users</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>
+              <form action="/deregister" method="post">
+                <input name="id" type="hidden" value="{{ user[0] }}">
+                <input name="email" type="hidden" value="{{ user[2] }}">
+                <input type="submit" value="Deregister">
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
