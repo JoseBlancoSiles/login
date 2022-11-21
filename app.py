@@ -27,16 +27,9 @@ app.config["MAIL_USERNAME"] = myEnval.MAIL_USERNAME
 mail = Mail(app)
 
 
-SPORTS = [
-  "Basketball",
-  "Football",
-  "Ultimate Frisbee"
-]
-
-
 @app.route('/', methods=["GET","POST"])
 def index():
-  return render_template("index.html", sports=SPORTS)
+  return render_template("index.html")
 
 
 @app.route("/register", methods=["POST"])
@@ -44,8 +37,6 @@ def register():
   
   # Validate submission
   username = request.form.get("username")
-  # if not username:
-  #   return render_template("failure.html", message="Missing username")
   
   con = sqlite3.connect('users.db')
   cursor = con.cursor()
@@ -59,13 +50,7 @@ def register():
     return render_template("registered.html")    
   
   email = request.form.get("email")
-  # if not email:
-  #   return render_template("failure.html", message="Missing email")
-  
   password = request.form.get('password')
-  
-  # if not password:
-  #   return render_template("failure.html", message="Missing password")
   
   # Remember registrant
   cursor.execute("INSERT INTO users (username, email, password) VALUES(?,?,?)", (username, email, password))
