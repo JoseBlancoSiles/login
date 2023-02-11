@@ -4,7 +4,7 @@
 
 # REGISTER
 
-Register has 3 user-box: username (must be unique), email and password. If the username is not in the BBDD users.db, it appends the user information to the DDBB.
+Register has 3 user-box: username (must be unique), email and password. If the username is not in the BBDD users.db, it appends the user information to the BBDD.
 The system automatically sends a message to the user's email to confirm the registration.
 
 # LOGIN
